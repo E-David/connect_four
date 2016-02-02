@@ -9,6 +9,16 @@ module ConnectFour
 			cells[x][y]
 		end
 
+		def set_cell(x, y, piece)
+			get_cell(x, y).value = piece
+		end
+
+		def game_over
+			return :winner if winner?
+			return :draw if draw?
+			false
+		end
+
 		private
 
 		def create_board
