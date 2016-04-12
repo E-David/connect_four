@@ -1,10 +1,19 @@
 module ConnectFour
 	class Game
 		attr_reader :board, :players, :current_player, :other_player
-		def initialize(players, board = Board.new)
+		def initialize(board = Board.new)
 			@board = board
-			@players = players
+			@players = get_players
 			@current_player,@other_player = players.shuffle
+			play_game
+		end
+
+		def get_players
+			puts "Player 1, please type your name:"
+			a = gets.chomp
+			puts "Player 2, please type your name:"
+			b = gets.chomp
+			return [ConnectFour::Player.new(a,"X"), ConnectFour::Player.new(b,"O")]
 		end
 
 		def switch_player
