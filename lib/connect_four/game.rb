@@ -10,10 +10,10 @@ module ConnectFour
 
 		def get_players
 			puts "Player 1, please type your name:"
-			a = gets.chomp
+			player_1 = gets.chomp
 			puts "Player 2, please type your name:"
-			b = gets.chomp
-			return [ConnectFour::Player.new(a,"X"), ConnectFour::Player.new(b,"O")]
+			player_2 = gets.chomp
+			return [ConnectFour::Player.new(player_1,"X"), ConnectFour::Player.new(player_2,"O")]
 		end
 
 		def switch_player
@@ -66,6 +66,3 @@ module ConnectFour
 		end
 	end
 end
-
-x = "f"
-p x
