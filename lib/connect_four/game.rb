@@ -24,8 +24,15 @@ module ConnectFour
 			p "#{current_player.name}, choose a column:"
 		end
 
-		def get_move(move = gets.chomp)
-			move.to_i
+		def get_move
+			while move = gets
+				if move.match(/\d/)
+					return move.to_i
+					break
+				else
+					puts "Numbers only please."
+				end
+			end
 		end
 
 		def game_over_message
@@ -59,3 +66,6 @@ module ConnectFour
 		end
 	end
 end
+
+x = "f"
+p x
